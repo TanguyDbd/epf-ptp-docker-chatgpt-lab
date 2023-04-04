@@ -25,9 +25,9 @@ def chatgpt():
 @app.route('/generate_code')
 def generate_code():
     args = request.args
-    coding_language = args.get("coding_language")
-    code_request = args.get("code_request")
-    message = f"Write {code_request} in {coding_language}."
+    language = args.get("language")
+    code_function = args.get("code_function")
+    message = f"Write {code_function} in {language}."
     print(message)
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
